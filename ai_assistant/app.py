@@ -1,4 +1,4 @@
-# Prosty chat-echo – podmienimy na OpenAI w kolejnym kroku.
+# Prosty chat-echo – na start.
 from tkinter import Frame, Text, Entry, Button, END
 from core.ui import make_child, padded
 
@@ -12,7 +12,8 @@ class SimpleChat:
 
     def on_send(self):
         msg = self.input.get().strip()
-        if not msg: return
+        if not msg: 
+            return
         self.log.insert(END, f"Ty: {msg}\n")
         self.log.insert(END, f"Asystent: (echo) {msg}\n\n")
         self.input.delete(0, END)
